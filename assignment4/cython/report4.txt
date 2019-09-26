@@ -1,0 +1,23 @@
+mandelbrot_1: 
+	width = 1000;
+	height = 1000;
+	max_iteration = 80;
+	yMin = -1.18;
+	yMax = 1.5;
+	xMin = -2.18;
+	xMax = 0.5;
+
+	runtime: 16.652 sec
+
+mandelbrot_4_cython:
+	width = 1000;
+	height = 1000;
+	max_iteration = 80;
+	yMin = -1.18;
+	yMax = 1.5;
+	xMin = -2.18;
+	xMax = 0.5;
+
+	runtime: 13.914 sec
+
+I used same parameters on both files, and you can see that the time difference is not that much greater with cython. It might be because I did not change the code in the pyx file to proper cython format. I just ran it as cython and executed the file. This is done with the mandelbrot_4_test.py. I tried to convert the code to cython, but it gave me some error messages which I did not understand. That is why I left it and just ran it with the cython compiler. It is still a bit faster, but It will probably be faster on larger values.

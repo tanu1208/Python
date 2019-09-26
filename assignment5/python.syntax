@@ -1,0 +1,21 @@
+"(?:(^|\n|\r)(\s*))\bdef\b": def
+"(?:(^|\n|\r)(\s*))\bclass\b": class
+"\b(return\s*.*)": return
+"(?:(^|\n|\r)(\s*))\bfor\b": for
+"\b(while\s*.*:)": while
+"\b(import)": import
+"(?:(^|\n|\r)(\s*))\bif\b": if-elif-else
+"(?:(^|\n|\r)(\s*))\belif\b": elif-else
+"(?:(^|\n|\r)(\s*))\belse\b": else
+"\s\s*=\s": variable assignment
+"\b(True)": true
+"\b(False)": false
+"\b(None)": none
+"\b(print)": print
+"(\".*?\")": string
+"(\'(.|\n)*?\')": char
+"\(\”[.\s]*|(\\n)|[.\s]*\”\)": newline
+"\b(\\n)": new_line
+"\b(range)": range
+"\b(in\s)": in
+"(#.*(?:$|\n))": comment

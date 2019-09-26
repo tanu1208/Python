@@ -1,0 +1,20 @@
+def: 0;92
+class: 0;92
+return: 0;94
+for: 0;93
+while: 0;93
+import: 0;95
+if-elif-else: 0;35
+elif-else: 0;35
+else: 0;35
+variable assignment: 0;36
+true: 0;94
+false: 0;94
+none: 0;94
+print: 0;31
+string: 0;32
+char: 0;32
+newline: 0;96
+range: 0;31
+in: 0;93
+comment: 0;96

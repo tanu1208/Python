@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>Python: module temperature_CO2_plotter</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body bgcolor="#f0f0f8">
+	<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+	<tr bgcolor="#54accc">
+	<td valign=bottom>
+		&nbsp; <br>
+		<font color="#ffffff" face="helvetica, arial">
+			&nbsp; <br>
+			<big><strong>temperature_CO2_plotter</strong></big>
+		</font>
+	</td>
+	<td align=right valign=bottom>
+		<font color="#ffffff" face="helvetica, arial">
+			<a href="."> Back </a> <br>
+			<a href="help/temperature_CO2_plotter">temperature_CO2_plotter.py</a>
+		</font>
+	</td>
+	</tr>
+	</table>
+	<p> 
+		# Python script which generates a plot by reading data files with panda
+	</p>
+	<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+		<tr bgcolor="#cc546e">
+			<td colspan=3 valign=bottom>&nbsp;<br>
+				<font color="#ffffff" face="helvetica, arial">
+					<big><strong>Modules</strong></big>
+				</font>
+			</td>
+		</tr>    
+		<tr>
+			<td bgcolor="#cc546e">
+				<tt> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </tt>
+			</td>
+			<td>
+				&nbsp;
+			</td>
+			<td width="100%">
+				<table width="100%" summary="list">
+				<tr>
+				<td width="25%" valign=top>
+					<a href="/help/matplotlib.pyplot">matplotlib.pyplot</a> <br>
+				</td>
+				<td width="25%" valign=top>
+					<a href="/help/help_sys">sys</a> <br>
+				</td>
+				<td width="25%" valign=top>
+					<a href="/help/pandas">pandas</a> <br>
+				</td>
+				<td width="25%" valign=top>
+					<a href="/help/flask">flask</a> <br>
+				</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+	<tr bgcolor="#c1ce4e">
+	<td colspan=3 valign=bottom>&nbsp;<br>
+		<font color="#ffffff" face="helvetica, arial">
+			<big><strong>Functions</strong></big>
+		</font>
+	</td>
+	</tr>    
+	<tr>
+	<td bgcolor="#c1ce4e">
+		<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt>
+	</td>
+	<td>
+		&nbsp;
+	</td>
+	<td width="100%">
+	 <dl><dt>
+	 	<a name="-plot_CO2"><strong>plot_CO2</strong></a>
+	 	(ymin=0, ymax=10000, start_year=1751, end_year=2012)
+	 </dt><dd>
+	 	<tt>
+	 		Method for reading CO2 file with the help of the read_csv method provided by pandas. <br>
+	 		Then ploting time (year) vs CO<sub>2</sub>. <br>
+	 		<br>
+	 		
+	 		Args:<br>
+	 		&nbsp;&nbsp;&nbsp;&nbsp; start_year - The year to start plotting from (default value: 1751). <br>
+	 		&nbsp;&nbsp;&nbsp;&nbsp; end_year - The year to stop plotting from (default value: 2012). <br>
+	 		&nbsp;&nbsp;&nbsp;&nbsp; ymin - Lowest y-axis value to plot (default value: 0). <br>
+	 		&nbsp;&nbsp;&nbsp;&nbsp; ymax - highest y-axis value to plot (default value: 10000). <br>
+	 		
+	 		<br>
+	 		Returns:<br>
+	 		&nbsp;&nbsp;&nbsp;&nbsp; None
+	 	</tt>
+	 </dd></dl>
+	 <dl><dt>
+	 	<a name="-plot_temperature"><strong>plot_temperature</strong></a>
+	 	(ymin=-6, ymax=5, start_year=1816, end_year=2012, month="July")
+	 </dt><dd>
+	 	<tt>
+	 		Method for reading temperature file with the help of the read_csv method provided by pandas. <br>
+	 		Then plotting temperature vs time based on the month <br>
+	 		
+	 		<br>
+	 		Args: <br>
+	 		&nbsp;&nbsp;&nbsp;&nbsp; start_year - The year to start plotting from (default value: 1816). <br>
+	 		&nbsp;&nbsp;&nbsp;&nbsp; end_year - The year to stop plotting from (default value: 2012). <br>
+	 		&nbsp;&nbsp;&nbsp;&nbsp; ymin - Lowest y-axis value to plot (default value: -6). <br>
+	 		&nbsp;&nbsp;&nbsp;&nbsp; ymax - highest y-axis value to plot (default value: 5). <br>
+	 		&nbsp;&nbsp;&nbsp;&nbsp; month - The month to use for plotting (default value: July). <br>
+	 		
+	 		<br>
+	 		Returns:<br>
+	 		&nbsp;&nbsp;&nbsp;&nbsp; None
+		 </tt>
+	 </dd></dl>
+	 <dl><dt>
+	 	<a name="-plot_CO2_by_country"><strong>plot_CO2_by_country</strong></a>
+	 	(year=1960, lower_treshold=5.0, upper_treshold=30.0)
+	 </dt><dd>
+	 	<tt>
+	 		Method for reading co2 values based on country and year using pandas. <br>
+	 		Then using country abbreviation to plot with co2 level based <br>
+	 		on the chosen year. <br>
+	 		
+	 		&nbsp;<br>
+	 		Args:<br>
+			&nbsp;&nbsp;&nbsp;&nbsp; year - The year to plot co2 emission for all countries (default value: 1960). <br>
+			&nbsp;&nbsp;&nbsp;&nbsp; lower_treshold - Value for min emission to plot (default value: 5.0). <br>
+			&nbsp;&nbsp;&nbsp;&nbsp; upper_treshold - Value for max emission to plot (default value: 30.0). <br>
+
+			&nbsp;<br>
+			Returns:<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;None
+		</tt>
+	</dd></dl>
+	</td>
+	</tr>
+	</table>
+	<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+		<tr bgcolor="#53ba5b">
+			<td colspan=3 valign=bottom>&nbsp;<br>
+				<font color="#ffffff" face="helvetica, arial">
+				<big><strong>Data</strong></big></font>
+			</td>
+		</tr>
+		<tr>
+			<td bgcolor="#53ba5b">
+				<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt>
+			</td>
+			<td>
+				&nbsp;
+			</td>
+			<td width="100%">
+				<strong>CO2_by_contry_file</strong> = <a href="/help/CO2_by_country">'data/CO2_by_country.csv'</a> <br>
+				<strong>CO2_file</strong> = <a href="/help/co2">'data/co2.csv'</a> <br>
+				<strong>temperature_file</strong> = <a href="/help/temperature">'data/temperature.csv'</a>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

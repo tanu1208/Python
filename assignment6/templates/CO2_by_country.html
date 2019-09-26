@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset='utf-8'>
+  </head>
+  <body style="background-color: gainsboro !important; font-family: 'Raleway', sans-serif !important; height: 100%; padding-top: 75px; display: flex; min-height: 100vh; flex-direction: column;">
+    <div >
+      <header style="height: 75px; position: fixed; background-color: black; right: 0; top: 0; left: 0;">
+        <img src="{{ uio_file }}" alt="uio" style="padding: 10px; max-width: 50px; max-height: 50px; border-radius: 20%;"/>
+        <a href="/CO2_by_country">
+          <button style="color: white; border:0; text-align: center !important; float: right; padding-right: 50px; background-color: black; padding-top: 27px !important; padding: 15px; display: inline-block; font-size: 14pt; font-weight: bold;">
+            CO<sub>2</sub> per capita plot
+          </button>
+        </a>
+        <a href="/temperature">
+          <button style="color: white; border:0; text-align: center !important; float: right; padding-right: 50px; background-color: black; padding-top: 27px !important; padding: 15px; display: inline-block; font-size: 14pt; font-weight: bold;">
+            Temperature plot
+          </button>
+        </a>
+        <a href="/">
+          <button style="color: white; border:0; text-align: center !important; float: right; padding-right: 50px; background-color: black; padding-top: 27px !important; padding: 15px; display: inline-block; font-size: 14pt; font-weight: bold;">
+            CO<sub>2</sub> plot
+          </button>
+        </a>
+        <a href="/help">
+          <button style="color: white; border:0; text-align: center !important; float: right; padding-right: 50px; background-color: black; padding-top: 27px !important; padding: 15px; display: inline-block; font-size: 14pt; font-weight: bold;">
+            Help
+          </button>
+        </a>
+      </header>
+      <h1 style="">CO<sub>2</sub> emissions (metric tons per capita) </h1>
+      <img src="{{ CO2_by_country }}" alt="CO2 Concentration by country" style="display: block; margin-left: auto; margin-right: auto; width: 40%;">
+
+      <form action="/CO2_by_country_changed" method="POST">
+
+          <h2>Change parameters</h2>
+          Time to plot from:
+          <select id="year" name="time"></select>
+
+          <script>
+            var year_from = 1960;
+            var year_to = 2013;
+            var y_options = "";
+            for(var y=year_from; y<=year_to; y++){
+              y_options += "<option value=" + y + ">"+ y +"</option>";
+            }
+            document.getElementById("year").innerHTML = y_options;
+          </script>
+          <br>
+          <br>
+
+          (Emission values differentiates between 0 to ca. 32)
+          <br>
+          <br>
+
+          Minimum CO<sub>2</sub> emission value:
+          <input type="number" name="min" value="5.0">
+          <br>
+
+          Maximum CO<sub>2</sub> emission value:
+          <input type="number" name="max" value="30.0">
+          <br>
+
+          <input type="submit" value="Update graphs" style="margin-top:10px; font-size:24pt; width:200px; height:400px;">
+          <br>
+          <br>
+        </div>
+    </div>
+    </form>
+  <body>
+</html>

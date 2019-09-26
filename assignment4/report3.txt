@@ -1,0 +1,44 @@
+mandelbrot_1: 
+	width = 1000;
+	height = 1000;
+	max_iteration = 80;
+	yMin = -1.18;
+	yMax = 1.5;
+	xMin = -2.18;
+	xMax = 0.5;
+
+	runtime: 16.631 sec
+
+mandelbrot_2:
+	width = 1000;
+	height = 1000;
+	max_iteration = 80;
+	yMin = -1.18;
+	yMax = 1.5;
+	xMin = -2.18;
+	xMax = 0.5;
+
+	runtime: 51.670 sec
+
+mandelbrot_3:
+	width = 1000;
+	height = 1000;
+	max_iteration = 80;
+	yMin = -1.18;
+	yMax = 1.5;
+	xMin = -2.18;
+	xMax = 0.5;
+
+	runtime: 0.566 sec
+
+
+
+I used same parameters in all three files. You can see that the time difference is almost 3 times as much in mandelbrot_2, compared to mandelbrot_1. But comparing mandelbrot_3 to the other files you can see that this program is almost 92 times faster than mandelbrot_2, and 29 times faster than mandelbrot_1. (The time will increase depending on what the max_iteration is)
+
+
+
+Advantages of Numba:
+Easy to use, supports numpy operations and objects, fast, highly automated.
+
+Disadvantages of Numba:
+Limited support for classes, hard to understand and debug (like magic), Needs to be installed as external dependency.

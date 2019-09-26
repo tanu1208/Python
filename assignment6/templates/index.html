@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset='utf-8'>
+  </head>
+  <body style="background-color: gainsboro !important; font-family: 'Raleway', sans-serif !important; height: 100%; padding-top: 75px; display: flex; min-height: 100vh; flex-direction: column;">
+    <div >
+      <header style="height: 75px; position: fixed; background-color: black; right: 0; top: 0; left: 0;">
+        <img src="{{ uio_file }}" alt="uio" style="padding: 10px; max-width: 50px; max-height: 50px; border-radius: 20%;"/>
+        <a href="/CO2_by_country">
+          <button style="color: white; border:0; text-align: center !important; float: right; padding-right: 50px; background-color: black; padding-top: 27px !important; padding: 15px; display: inline-block; font-size: 14pt; font-weight: bold;">
+            CO<sub>2</sub> per capita plot
+          </button>
+        </a>
+        <a href="/temperature">
+          <button style="color: white; border:0; text-align: center !important; float: right; padding-right: 50px; background-color: black; padding-top: 27px !important; padding: 15px; display: inline-block; font-size: 14pt; font-weight: bold;">
+            Temperature plot
+          </button>
+        </a>
+        <a href="/">
+          <button style="color: white; border:0; text-align: center !important; float: right; padding-right: 50px; background-color: black; padding-top: 27px !important; padding: 15px; display: inline-block; font-size: 14pt; font-weight: bold;">
+            CO<sub>2</sub> plot
+          </button>
+        </a>
+        <a href="/help">
+          <button style="color: white; border:0; text-align: center !important; float: right; padding-right: 50px; background-color: black; padding-top: 27px !important; padding: 15px; display: inline-block; font-size: 14pt; font-weight: bold;">
+            Help
+          </button>
+        </a>
+      </header>
+      <h1>CO<sub>2</sub> Concentration for the given year </h1>
+      <img src="{{ CO2_file }}" alt="CO2 Concentration" style="display: block; margin-left: auto; margin-right: auto; width: 40%;">
+
+      <form action="/index_changed" method="POST">
+
+          <h2>Change parameters</h2>
+          Time to plot from:
+          <select id="year-from" name="time_from"></select>
+          <select id="year-to" name="time_to"></select>
+
+          <script>
+            var year_from = 1751;
+            var year_to = 2012;
+            var options = "";
+            for(var y=year_from; y<=year_to; y++){
+              options += "<option value=" + y + ">"+ y +"</option>";
+            }
+            document.getElementById("year-from").innerHTML = options;
+
+            var options2 = "";
+            for(var y=year_to; y>=year_from; y--){
+              options2 += "<option value=" + y + ">"+ y +"</option>";
+            }
+            document.getElementById("year-to").innerHTML = options2;
+          </script>
+          <br>
+
+          Y-axis range for CO<sub>2</sub> graph:
+          <input type="number" name="y_min_CO2" value="0">
+          <input type="number" name="y_max_CO2" value="10000">
+          <br>
+          <br>
+
+          (<strong>Note</strong> that there might not be values for some months based on which year. Or the value is not within the values for y-axis)
+          <br>
+
+          <input type="submit" value="Update graphs" style="margin-top:10px; font-size:24pt; width:200px; height:400px;">
+          <br>
+          <br>
+        </div>
+    </div>
+    </form>
+  <body>
+</html>
