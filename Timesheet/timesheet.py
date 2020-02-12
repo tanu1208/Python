@@ -1,3 +1,3 @@
 import os
-cmd = 'wc -l my_text_file.txt > out_file.txt'
+cmd = 'last'
 os.system(cmd)
